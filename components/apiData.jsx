@@ -4,17 +4,17 @@ export async function fetchHome() {
   return data;
 }
 
-export async function fetchSearch(query) {
+export async function fetchSearch(value) {
   const res = await fetch(
-    `https://kumanime.vercel.app/api/seacrh/${query}`
+    `https://kumanime.vercel.app/api/seacrh/${value}`
   );
   const data = res.json();
   return data;
 }
 
-export async function fetchDetail(endpoint) {
+export async function fetchDetail(slug) {
   const res = await fetch(
-    `https://komi.katowproject.app/api/otakudesu/anime/${endpoint}`
+    `https://kumanime.vercel.app/api/anime/${slug}`
   );
   const data = res.json();
   return data;
@@ -22,7 +22,7 @@ export async function fetchDetail(endpoint) {
 
 export async function fetchDaftar() {
   const res = await fetch(
-    "https://kumanime.vercel.app/api/popular"
+    "https://kumanime.vercel.app/api/populer"
   );
   const data = res.json();
   return data;
@@ -36,10 +36,10 @@ export async function fetchJadwal() {
   return data;
 }
 
-export async function fetchEpisode(episode, id) {
+export async function fetchEpisode(slug) {
   const url = id
-    ? `https://komi.katowproject.app/api/otakudesu/eps/${episode}/?id=${id}`
-    : `https://komi.katowproject.app/api/otakudesu/eps/${episode}`;
+    ? `https://kumanime.vercel.app/api/episode/${slug}`
+    : `https://kumanime.vercel.app/api/episode/${slug}`;
   const res = await fetch(url);
   const data = res.json();
   return data;
