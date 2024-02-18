@@ -18,7 +18,7 @@ export default function AnimePage() {
   const [detailAnime, setDetailAnime] = useState([]);
   const [epsAnimeFirst, setEpsAnimeFirst] = useState([]);
   const router = useRouter();
-  const { anime } = router.query;
+  const { anime } = router.value;
 
   async function getDetail() {
     const res = await fetchDetail(anime);
@@ -43,7 +43,7 @@ export default function AnimePage() {
                 <td className="justify-content-end d-flex">
                   <Button
                     variant="danger"
-                    href={`/episode/${episode.endpoint}`}
+                    href={`/episode/${episode.slug}`}
                     style={{ fontFamily: "Poppins" }}
                   >
                     Nonton Anime!
