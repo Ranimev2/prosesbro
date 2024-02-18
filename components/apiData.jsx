@@ -1,5 +1,5 @@
 export async function fetchHome() {
-  const res = await fetch(`https://komi.katowproject.app/api/otakudesu/home`);
+  const res = await fetch(`https://latipharkat-api.my.id/api/otakudesu/home`);
   const data = res.json();
   return data;
 }
@@ -22,7 +22,7 @@ export async function fetchDetail(endpoint) {
 
 export async function fetchDaftar() {
   const res = await fetch(
-    "https://komi.katowproject.app/api/otakudesu/daftar-anime"
+    "https://latipharkat-api.my.id/api/otakudesu/genres"
   );
   const data = res.json();
   return data;
@@ -30,7 +30,7 @@ export async function fetchDaftar() {
 
 export async function fetchJadwal() {
   const res = await fetch(
-    "https://komi.katowproject.app/api/otakudesu/jadwal-rilis"
+    "https://latipharkat-api.my.id/api/otakudesu/ongoing"
   );
   const data = res.json();
   return data;
