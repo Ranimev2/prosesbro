@@ -6,7 +6,7 @@ export async function fetchHome() {
 
 export async function fetchSearch(query) {
   const res = await fetch(
-    `https://komi.katowproject.app/api/otakudesu/search/${query}`
+    `https://kumanime.vercel.app/api/seacrh/${query}`
   );
   const data = res.json();
   return data;
@@ -22,7 +22,7 @@ export async function fetchDetail(endpoint) {
 
 export async function fetchDaftar() {
   const res = await fetch(
-    "https://latipharkat-api.my.id/api/otakudesu/ongoing"
+    "https://kumanime.vercel.app/api/popular"
   );
   const data = res.json();
   return data;
@@ -30,7 +30,7 @@ export async function fetchDaftar() {
 
 export async function fetchJadwal() {
   const res = await fetch(
-    "https://latipharkat-api.my.id/api/otakudesu/complete"
+    "https://kumanime.vercel.app/api/latest"
   );
   const data = res.json();
   return data;
