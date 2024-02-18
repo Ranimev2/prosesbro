@@ -11,10 +11,10 @@ export default function Episode() {
   const [dropdownOption, setDropdownOption] = useState([]);
   const [selectedId, setSelectedId] = useState("");
   const router = useRouter();
-  const { episode, id } = router.query;
+  const { slug } = router.value;
 
   async function getEpisode() {
-    const res = await fetchEpisode(episode, id);
+    const res = await fetchEpisode(slug);
     const download = DownloadHandle(res.download_link);
     const dropdown = MirrorHandle(res.mirror_stream_link);
     setDropdownOption(dropdown);
@@ -57,11 +57,11 @@ export default function Episode() {
     }
     return arr;
   }
-  const handleIdSelection = async (id) => {
-    setSelectedId(id);
+  const handleIdSelection = async (slug) => {
+    setSelectedId(slug);
 
     // Bikin URL berdasarkan data.URL di dropdown
-    const url = `/episode/${episode}/?id=${id}`;
+    const url = `/episode/${slug}`;
     // Nempelin URL baru
     router.push(url);
     // Reload page berdasarkan waktu timeout
@@ -90,7 +90,7 @@ export default function Episode() {
 
       arr.push(
         <Dropdown key={m.name} onSelect={handleIdSelection}>
-          <Dropdown.Toggle variant="danger" id="dropdown-basic">
+          <Dropdown.Toggle variant="danger" slug="dropdown-basic">
             {m.name}
           </Dropdown.Toggle>
           <Dropdown.Menu>{dropdownItems}</Dropdown.Menu>
