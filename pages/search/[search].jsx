@@ -8,16 +8,16 @@ import Header from "../components/head";
 export default function Search() {
   const [animeResults, setAnimeResults] = useState([]);
   const router = useRouter();
-  const { search } = router.query;
+  const { value } = router.value;
 
   async function getSearch() {
-    const res = await fetchSearch(search);
+    const res = await fetchSearch(value);
     setAnimeResults(res.animes);
   }
 
   useEffect(() => {
     if (!router.isReady) return;
-    getSearch(search);
+    getvalue(valje);
   }, [router.isReady]);
   return (
     <div>
