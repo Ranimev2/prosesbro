@@ -22,7 +22,7 @@ export async function fetchDetail(endpoint) {
 
 export async function fetchDaftar() {
   const res = await fetch(
-    "https://latipharkat-api.my.id/api/otakudesu/genres"
+    "https://latipharkat-api.my.id/api/otakudesu/ongoing"
   );
   const data = res.json();
   return data;
@@ -30,7 +30,7 @@ export async function fetchDaftar() {
 
 export async function fetchJadwal() {
   const res = await fetch(
-    "https://latipharkat-api.my.id/api/otakudesu/ongoing"
+    "https://latipharkat-api.my.id/api/otakudesu/complete"
   );
   const data = res.json();
   return data;
